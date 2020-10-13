@@ -1,0 +1,199 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+* html,
+* body {
+  margin: 0 auto;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  background-color: #222;
+}
+
+* header {
+  color: white;
+  white-space: nowrap;
+}
+
+* h1 {
+  text-align: lesft;
+  margin: 0;
+  font-size: 50px;
+  padding-top: 2pc;
+  padding-left: 3.5pc;
+}
+
+* .HeaderP {
+  padding-left: 3.5pc;
+  text-align: left;
+  margin: 0;
+  padding-bottom: 5px;
+  font-size: 30px;
+}
+
+* .TestingText {
+  width: 100%;
+  text-align: right;
+}
+
+* .menu {
+  display: inline-block;
+  width: 100%;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  text-align: left;
+  margin: 0;
+  max-width: 90%;
+  margin: auto;
+}
+
+* .menu .container {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  width: 600px;
+}
+
+* .menu .list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+* .menu li {
+  display: inline-block;
+  padding: 0 20px;
+}
+
+* .menu span {
+  position: relative;
+  display: block;
+  cursor: pointer;
+}
+
+* .menu .list__item--yellow {
+  color: #FFC56C;
+}
+
+* .menu .list__item--blue {
+  color: #6EC5E9;
+}
+
+* .menu .list__item--red {
+  color: #FF5959;
+}
+
+* .menu span:before, * .menu span:after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 4px;
+  bottom: -2px;
+  margin-top: -0.5px;
+  background: #fff;
+}
+
+* .menu span:before {
+  left: -2.5px;
+}
+
+* .menu span:after {
+  right: 2.5px;
+  background: #fff;
+  -webkit-transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+  transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+* .menu span:hover:before {
+  background: #fff;
+  width: 100%;
+  -webkit-transition: width 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+  transition: width 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+* .menu span:hover:after {
+  background: transparent;
+  width: 100%;
+  -webkit-transition: 0s;
+  transition: 0s;
+}
+
+* .ProjectGrid {
+  /* Add padding BETWEEN each column */
+  /* Create four equal columns that floats next to each other */
+  /* Clear floats after rows */
+  /* Content */
+  /* Responsive layout - makes a two column-layout instead of four columns */
+  /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+}
+
+* .ProjectGrid .row {
+  display: -ms-flexbox;
+  /* IE10 */
+  display: -webkit-box;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  /* IE10 */
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+* .ProjectGrid .row,
+* .ProjectGrid .row > .column {
+  padding: 6px;
+}
+
+* .ProjectGrid .column {
+  -ms-flex: 25%;
+  /* IE10 */
+  -webkit-box-flex: 25%;
+          flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
+}
+
+* .ProjectGrid .row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+* .ProjectGrid .content {
+  background-color: white;
+  padding: 10px;
+}
+
+@media screen and (max-width: 800px) {
+  * .ProjectGrid .column {
+    -ms-flex: 50%;
+    -webkit-box-flex: 50%;
+            flex: 50%;
+    max-width: 50%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  * .ProjectGrid .column {
+    -ms-flex: 100%;
+    -webkit-box-flex: 100%;
+            flex: 100%;
+    max-width: 100%;
+  }
+}
+
+* .ProjectGrid .GitHubLink {
+  text-align: center;
+  float: none;
+  background-color: #646464;
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: white;
+}
+
+* .ProjectGrid .GitHubLink:hover {
+  background-color: #333333;
+}
+/*# sourceMappingURL=mystyle.css.map */
