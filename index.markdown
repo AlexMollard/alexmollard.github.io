@@ -5,7 +5,7 @@
 layout: default
 ---
 
-This is my cross section of the internet. For C++ go here: [C++ Odyssey](https://www.alexmollard.dev/)
+This is my cross section of the internet. For C++ go here: [C++ Odyssey](https://alexmollard.github.io/CppOdyssey)
 
 ## Links
 
