@@ -25,6 +25,9 @@ url: "https://alexmollard.github.io/" # the base hostname & protocol for your si
 twitter_username: mollard13
 github_username:  AlexMollard
 
+# Repository settings for GitHub metadata
+repository: AlexMollard/alexmollard.github.io
+
 # Build settings
 theme: just-the-docs
 color_scheme: dark
