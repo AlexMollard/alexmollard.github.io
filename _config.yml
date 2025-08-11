@@ -26,7 +26,8 @@ twitter_username: mollard13
 github_username:  AlexMollard
 
 # Build settings
-theme: minima
+theme: just-the-docs
+color_scheme: dark
 plugins:
   - jekyll-feed
 
