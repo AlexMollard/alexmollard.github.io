@@ -1,26 +1,2 @@
----
-// Client: only hydration for theme toggle
----
-<button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
-  <span id="theme-icon">🌙</span>
-  <span class="label">Theme</span>
-</button>
-<script>
-  const storageKey = 'theme-preference';
-  const body = document.documentElement;
-  const btn = document.getElementById('theme-toggle');
-  const icon = document.getElementById('theme-icon');
-  function current() { return localStorage.getItem(storageKey) || 'system'; }
-  function apply(mode) {
-    body.classList.add('theme-transition');
-    const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
-    const useLight = mode === 'light' || (mode === 'system' && prefersLight);
-    body.classList.toggle('light-theme', useLight);
-    icon.textContent = useLight ? '🌙' : '☀️';
-    window.setTimeout(()=> body.classList.remove('theme-transition'),400);
-  }
-  function next(mode) { return mode === 'system' ? 'light' : mode === 'light' ? 'dark' : 'system'; }
-  btn.addEventListener('click', () => { const n = next(current()); localStorage.setItem(storageKey,n); apply(n); });
-  apply(current());
-  window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', () => apply(current()));
-</script>
+<!-- Deprecated theme toggle component (removed for minimal template). -->
+

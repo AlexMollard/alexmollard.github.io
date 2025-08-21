@@ -1,8 +1,5 @@
 ---
-import Footer from "../components/Footer.astro";
-import Header from "../components/Header.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
-import '../styles/global.css';
 export interface Props {
   title?: string;
   description?: string;
@@ -28,10 +25,6 @@ const { title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.props;
   <meta name="twitter:description" content={description} />
   </head>
   <body>
-    <Header />
-    <main>
-      <slot />
-      <Footer />
-    </main>
+    <slot />
   </body>
 </html>
