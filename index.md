@@ -77,28 +77,3 @@ excerpt: "Pushing pixels & polygons — modern rendering, engine architecture, a
   <p>Want to chat about graphics programming? <a href="https://github.com/AlexMollard" rel="noopener" target="_blank">Reach out on GitHub</a>.</p>
 </section>
 
-<style>
-  .hero-intro h1 { margin-bottom: .25rem; }
-  .hero-intro .dim { opacity:.65; font-weight:400; }
-  .tagline { font-size:1.05rem; max-width:860px; }
-  .skills-cloud { display:flex; flex-wrap:wrap; gap:.4rem; margin:1rem 0 1.2rem; }
-  .skills-cloud span { background:#111; padding:.35rem .65rem; border:1px solid #222; font-size:.65rem; letter-spacing:.5px; text-transform:uppercase; border-radius:4px; }
-  .link-pills { display:flex; flex-wrap:wrap; gap:.5rem; margin-top:.75rem; }
-  .pill { background:#111; border:1px solid #222; padding:.45rem .8rem; font-size:.6rem; text-transform:uppercase; letter-spacing:.6px; border-radius:20px; text-decoration:none; }
-  .pill:hover { background:#182030; border-color:#2a3d55; }
-  .pinned-projects { margin-top:2.5rem; }
-  .project-grid { display:grid; gap:1rem; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); }
-  .project-card { background:#111; border:1px solid #222; padding:1rem 1rem 1.1rem; border-radius:6px; display:flex; flex-direction:column; }
-  .project-card h3 { font-size:1rem; margin:0 0 .4rem; }
-  .project-card .desc { font-size:.8rem; line-height:1.25rem; flex-grow:1; }
-  .project-card .meta { font-size:.65rem; display:flex; gap:.7rem; margin-top:.6rem; opacity:.75; }
-  .lang { font-size:.55rem; background:#222; padding:.25rem .45rem; border-radius:4px; text-transform:uppercase; letter-spacing:.6px; }
-  .github-activity img { max-width:100%; background:#111; border:1px solid #222; border-radius:6px; margin-top:.5rem; }
-  .post-list-inline { list-style:none; padding:0; margin:0; display:grid; gap:.4rem; }
-  .post-list-inline li { display:flex; gap:.5rem; font-size:.8rem; }
-  .post-list-inline .date { opacity:.55; font-family:monospace; }
-  .focus-grid { list-style:none; padding:0; margin:0; display:grid; gap:.6rem; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); font-size:.75rem; }
-  .contact-cta blockquote { font-size:.85rem; }
-  .cta-footer { margin:3rem 0 1rem; font-size:.85rem; opacity:.85; }
-  @media (min-width:1200px){ .skills-cloud span { font-size:.6rem; } }
-</style>
