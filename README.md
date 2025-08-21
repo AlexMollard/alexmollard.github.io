@@ -1,63 +1,72 @@
 <h1 align="center">alexmollard.github.io</h1>
-<p align="center">A modern, clean, minimal Jekyll site – auto‑deployed with GitHub Actions.</p>
+<p align="center">Astro-powered minimalist site – Markdown-first, zero unnecessary JS, deployed via GitHub Pages Actions.</p>
 
 ## ✨ Features
 
-- Lightweight: default Jekyll + Minima with lean custom styling
-- Auto dark/light via `prefers-color-scheme`
-- SEO + Atom feed (jekyll-seo-tag, jekyll-feed)
+- Astro 4 + content collections (type-safe front matter)
+- Zero JS shipped by default (islands only when needed)
+- RSS feed (`/rss.xml`)
 - GitHub Pages deployment via Actions (`deploy.yml`)
-- No trackers, no JS build pipeline, just Markdown → HTML
+- Dark/light friendly palette, no trackers
 
 ## 📁 Structure
 
 ```
-Gemfile                  # Dependencies (Jekyll + plugins)
-_config.yml              # Site config & metadata
-index.md                 # Homepage
-about.md                 # About page
-projects.md              # Projects list
-_posts/                  # Blog posts (add your own)
-404.html                 # Friendly 404
-.github/workflows/deploy.yml  # Build & deploy pipeline
+package.json                 # Node scripts & deps
+astro.config.mjs             # Astro config
+tsconfig.json                # TypeScript strict config
+src/consts.ts                # Site constants
+src/layouts/                 # Base, Page, Post layouts
+src/components/              # Reusable components
+src/pages/                   # Route pages (/, /about, /projects, /blog, /tags, /categories)
+src/content/blog/            # Markdown posts (content collection)
+src/data/pinned.json         # Project metadata (formerly _data/pinned.yml)
+.github/workflows/deploy.yml # Build & deploy pipeline
 ```
 
 ## 🧪 Local Development
 
-Prereqs: Ruby >= 3.1 & Bundler.
+Prereqs: Node.js 20+
 
 ```powershell
-bundle install
-bundle exec jekyll serve --livereload
+npm install
+npm run dev
 ```
 
-Visit http://127.0.0.1:4000
+Open http://localhost:4321
 
 ## ✍️ Creating a Post
 
-Create `_posts/YYYY-MM-DD-title.md`:
+Create `src/content/blog/YYYY-MM-DD-slug.md`:
 
 ```markdown
 ---
 title: Focus Beats Complexity
-excerpt: Short teaser sentence.
+description: Short teaser sentence.
+pubDate: 2025-08-21
 tags: [focus]
+categories: [engineering]
+draft: false
 ---
 
-Write in Markdown. Front matter can include `tags`, `excerpt`, `image`, etc.
+Markdown body here.
 ```
+
+The front matter is schema‑validated; invalid keys or wrong types will surface in build output.
 
 ## 🚀 Deployment
 
-Push to `master`. GitHub Actions will build Jekyll and publish `_site` to GitHub Pages using the official Pages actions.
+Push to `master`. GitHub Actions builds & uploads `dist/` as a Pages artifact, then publishes.
 
-Make sure Pages is set to "GitHub Actions" in the repo settings (Settings → Pages → Build and deployment).
+Ensure Pages is configured to use GitHub Actions in repo settings.
 
 ## 🔧 Customization
 
-Using stock Minima styles (no custom stylesheet). Adjust metadata in `_config.yml`. Content lives in Markdown files.
+Edit global palette / typography in `src/layouts/BaseLayout.astro` (inline CSS for now). Extract to a stylesheet or add Tailwind / UnoCSS if complexity grows.
+
+Add interactive components by creating `.astro` (or React/Vue/Svelte) components and importing them where needed.
 
 ## 📄 License
 
-Content © Alex Mollard. Theme © Minima (MIT).
+Content © Alex Mollard. Layout/components MIT unless noted.
 

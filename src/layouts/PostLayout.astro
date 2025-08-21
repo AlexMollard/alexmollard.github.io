@@ -1,0 +1,19 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import type { CollectionEntry } from 'astro:content';
+export interface Props { post: CollectionEntry<'blog'> }
+const { post } = Astro.props;
+const { data } = post;
+---
+<BaseLayout title={data.title} description={data.description}>
+  <article>
+    <h1>{data.title}</h1>
+    <p class="muted"><time datetime={data.pubDate.toISOString()}>{data.pubDate.toISOString().slice(0,10)}</time>
+      {data.updated && (<span> • Updated <time datetime={data.updated.toISOString()}>{data.updated.toISOString().slice(0,10)}</time></span>)}
+    </p>
+    <slot />
+    {data.tags.length > 0 && (
+      <p class="muted">Tags: {data.tags.map(t => (<a href={`/tags/#${t.toLowerCase()}`}>{t}</a>)).reduce((prev, curr) => [prev, ' • ', curr])}</p>
+    )}
+  </article>
+</BaseLayout>

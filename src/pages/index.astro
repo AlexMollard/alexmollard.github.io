@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import pinned from '../data/pinned.json';
+import { getCollection } from 'astro:content';
+const posts = await getCollection('blog', ({ data }) => !data.draft);
+posts.sort((a,b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
+const latest = posts.slice(0,3);
+const pinnedSorted = [...pinned].sort((a,b) => a.order - b.order);
+const topPinned = pinnedSorted.slice(0,3);
+---
+<BaseLayout>
+  <p>Hi, I'm <strong>Alex Mollard</strong>.</p>
+  <p>I work on C++ engine & systems programming, rendering pipelines, and developer tooling/performance.</p>
+
+  <h3>Projects</h3>
+  <p>See <a href="/projects/">Projects</a> for more — a few highlights:</p>
+  <ul>
+    {topPinned.map(p => (
+      <li><a href={p.url}>{p.display}</a> — {p.description}</li>
+    ))}
+  </ul>
+
+  <h3>Latest</h3>
+  {latest.length === 0 ? (
+    <p><em>No posts yet.</em></p>
+  ) : (
+    <ul>
+      {latest.map(post => (
+        <li><a href={`/blog/${post.slug}/`}>{post.data.title}</a> <small>{post.data.pubDate.toISOString().slice(0,10)}</small></li>
+      ))}
+    </ul>
+  )}
+
+  <hr />
+  <p>GitHub: <a href="https://github.com/AlexMollard">https://github.com/AlexMollard</a></p>
+</BaseLayout>

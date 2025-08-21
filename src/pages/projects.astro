@@ -1,0 +1,15 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import pinned from '../data/pinned.json';
+const all = [...pinned].sort((a,b) => a.order - b.order);
+---
+<PageLayout title="Projects">
+  <p>Below is a concise list of public projects / sandboxes. Order reflects current relevance.</p>
+  {all.map(p => (
+    <>
+      <h3><a href={p.url}>{p.display}</a>{p.language && (<small> <code>{p.language}</code></small>)}</h3>
+      <p>{p.description}</p>
+      <hr />
+    </>
+  ))}
+</PageLayout>

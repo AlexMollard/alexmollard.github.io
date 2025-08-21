@@ -1,0 +1,17 @@
+{
+  "name": "alexmollard-site",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/rss": "^4.0.0",
+    "astro": "^4.10.0",
+    "typescript": "^5.5.0"
+  }
+}
