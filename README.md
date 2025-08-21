@@ -1,27 +1,32 @@
 <h1 align="center">alexmollard.github.io</h1>
-<p align="center">Astro-powered minimalist site – Markdown-first, zero unnecessary JS, deployed via GitHub Pages Actions.</p>
+<p align="center">Modern Astro site – fast, accessible, content‑first, with dark/light theme, RSS & sitemap.</p>
 
 ## ✨ Features
 
-- Astro 4 + content collections (type-safe front matter)
-- Zero JS shipped by default (islands only when needed)
-- RSS feed (`/rss.xml`)
-- GitHub Pages deployment via Actions (`deploy.yml`)
-- Dark/light friendly palette, no trackers
+- Astro 4 + typed content collections
+- Global stylesheet + CSS variables + adaptive typography
+- Dark / Light theme toggle (localStorage persisted)
+- Zero-JS pages by default (only ~1 KB for theme island)
+- RSS feed (`/rss.xml`) & automatic sitemap (`/sitemap-index.xml`)
+- Open Graph & basic SEO meta tags
+- Syntax highlighting (Shiki via Astro markdown config)
+- GitHub Pages CI deploy
 
 ## 📁 Structure
 
 ```
 package.json                 # Node scripts & deps
-astro.config.mjs             # Astro config
+astro.config.mjs             # Astro config + integrations (sitemap)
 tsconfig.json                # TypeScript strict config
+public/                      # Static assets (favicons, manifest)
 src/consts.ts                # Site constants
+src/styles/global.css        # Global styles & themes
+src/components/              # Header, Footer, ThemeToggle
 src/layouts/                 # Base, Page, Post layouts
-src/components/              # Reusable components
-src/pages/                   # Route pages (/, /about, /projects, /blog, /tags, /categories)
-src/content/blog/            # Markdown posts (content collection)
-src/data/pinned.json         # Project metadata (formerly _data/pinned.yml)
-.github/workflows/deploy.yml # Build & deploy pipeline
+src/pages/                   # Routes (/, /about, /projects, /blog, /tags, /categories, /404)
+src/content/blog/            # Blog markdown posts
+src/data/pinned.json         # Project metadata
+.github/workflows/deploy.yml # CI build & deploy
 ```
 
 ## 🧪 Local Development
@@ -62,9 +67,10 @@ Ensure Pages is configured to use GitHub Actions in repo settings.
 
 ## 🔧 Customization
 
-Edit global palette / typography in `src/layouts/BaseLayout.astro` (inline CSS for now). Extract to a stylesheet or add Tailwind / UnoCSS if complexity grows.
-
-Add interactive components by creating `.astro` (or React/Vue/Svelte) components and importing them where needed.
+- Adjust design tokens in `src/styles/global.css` (`--color-*`, spacing, fonts).
+- Add MDX support by installing `@astrojs/mdx` and updating `astro.config.mjs`.
+- Add more islands (React/Vue/Svelte) only where interactivity is required.
+- Place static assets (images, icons) into `public/` for root-relative serving.
 
 ## 📄 License
 

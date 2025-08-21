@@ -1,0 +1,18 @@
+---
+import ThemeToggle from './ThemeToggle.astro';
+import { SITE_TITLE } from '../consts';
+---
+<header class="site-header">
+  <nav class="nav-inner" aria-label="Main navigation">
+    <a class="brand" href="/">{SITE_TITLE}</a>
+    <div class="nav-links" role="menubar">
+      <a href="/projects/" role="menuitem">Projects</a>
+      <a href="/blog/" role="menuitem">Blog</a>
+      <a href="/categories/" role="menuitem">Categories</a>
+      <a href="/tags/" role="menuitem">Tags</a>
+      <a href="/about/" role="menuitem">About</a>
+    </div>
+    <div class="spacer" />
+    <ThemeToggle />
+  </nav>
+</header>
