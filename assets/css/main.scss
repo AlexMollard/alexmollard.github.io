@@ -15,18 +15,18 @@ body {
   margin: 0;
 }
 
-:root { color-scheme: light dark; }
+/* Dark is default; still declare support for light/dark for UA styling */
+:root { color-scheme: dark light; }
 
-@media (prefers-color-scheme: dark) {
-  body { 
-    --bg: #0d0f11; 
-    --bg-alt: #111418; 
-    background: linear-gradient(180deg,var(--bg) 0%, var(--bg-alt) 100%);
-    color: #e5e7eb; 
-  }
-  a { color: #6ea8ff; }
-  header.site-header { background: transparent; }
+/* Ensure dark palette variables are set even if user agent starts in light */
+body { 
+  --bg: #0d0f11; 
+  --bg-alt: #111418; 
+  background: linear-gradient(180deg,var(--bg) 0%, var(--bg-alt) 100%);
+  color: #e5e7eb; 
 }
+a { color: #6ea8ff; }
+header.site-header { background: transparent; }
 
 header.site-header {
   background: transparent;

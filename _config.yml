@@ -30,7 +30,7 @@ future: false
 timezone: UTC
 
 minima:
-  skin: auto # light/dark via prefers-color-scheme
+  skin: dark # dark by default
   social_links:
     - { platform: github,  user_url: "https://github.com/AlexMollard" }
 
