@@ -82,4 +82,4 @@ github:
 
 lsi: false
 incremental: true
-safe: true
+# safe: true  # Removed to allow plugin tags (jekyll-seo-tag) during build
