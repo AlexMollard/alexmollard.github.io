@@ -2,5 +2,7 @@
   "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
     "baseUrl": "."
-  }
+  },
+  "include": ["src", "astro.config.*", "env.d.ts", "src/env.d.ts"],
+  "exclude": ["dist", "node_modules"]
 }
