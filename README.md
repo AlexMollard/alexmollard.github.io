@@ -14,9 +14,9 @@
 ```
 Gemfile                  # Dependencies (Jekyll + plugins)
 _config.yml              # Site config & metadata
-assets/css/main.scss     # Custom design layer
-index.md                 # Hero + recent posts
+index.md                 # Homepage
 about.md                 # About page
+projects.md              # Projects list
 _posts/                  # Blog posts (add your own)
 404.html                 # Friendly 404
 .github/workflows/deploy.yml  # Build & deploy pipeline
@@ -55,9 +55,9 @@ Make sure Pages is set to "GitHub Actions" in the repo settings (Settings → Pa
 
 ## 🔧 Customization
 
-Edit `assets/css/main.scss` for styling tweaks. Update metadata in `_config.yml`. Hero text lives in `index.md`.
+Using stock Minima styles (no custom stylesheet). Adjust metadata in `_config.yml`. Content lives in Markdown files.
 
 ## 📄 License
 
-Content © Alex Mollard. Theme base © Minima (MIT). Custom enhancements MIT.
+Content © Alex Mollard. Theme © Minima (MIT).
 
