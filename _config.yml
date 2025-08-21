@@ -1,55 +1,118 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
-#
-# If you need help with YAML syntax, here are some quick references for you:
-# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
-# https://learnxinyminutes.com/docs/yaml/
-#
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
+title: "Alex Mollard"
+name: "Alex Mollard"
+description: >-
+  Personal site and blog. Thoughts on software engineering, data, and projects.
+url: "https://alexmollard.github.io"
+baseurl: ""
 
-title: Alex Mollard
-email: alexmollard@protonmail.com
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://alexmollard.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: mollard13
-github_username:  AlexMollard
-
-# Repository settings for GitHub metadata
-repository: AlexMollard/alexmollard.github.io
+timezone: UTC
+lang: en
 
 # Build settings
-theme: just-the-docs
-color_scheme: dark
+markdown: kramdown
+highlighter: rouge
+permalink: /:categories/:title/
+paginate: 5
+paginate_path: "/page:num/"
+
+# Theme
+remote_theme: "mmistakes/minimal-mistakes"
+minimal_mistakes_skin: "dark"
+
+# Plugins (GitHub Actions build supports these)
 plugins:
   - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-paginate
+  - jekyll-include-cache
+  - jekyll-remote-theme
 
-# Exclude from processing.
-# The following items will not be processed, by default.
-# Any item listed under the `exclude:` key here will be automatically added to
-# the internal "default list".
-#
-# Excluded items can be processed by explicitly listing the directories or
-# their entries' file path in the `include:` list.
-#
-# exclude:
-#   - .sass-cache/
-#   - .jekyll-cache/
-#   - gemfiles/
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules/
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+# Author profile
+author:
+  name: "Alex Mollard"
+  avatar: "/assets/images/avatar.svg"
+  bio: "Software engineer | Building reliable, elegant systems."
+  location: ""
+  links:
+    - label: "GitHub"
+      icon: "fab fa-github"
+      url: "https://github.com/AlexMollard"
+    - label: "LinkedIn"
+      icon: "fab fa-linkedin"
+      url: "https://www.linkedin.com/in/"
+
+include:
+  - _pages
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - README.md
+  - .github
+
+# SEO & Social
+logo: "/assets/images/avatar.svg"
+social:
+  name: Alex Mollard
+  links:
+    - https://github.com/AlexMollard
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: false
+      share: true
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+
+collections:
+  posts:
+    output: true
+
+footer:
+  links:
+    - label: "GitHub"
+      icon: "fab fa-github"
+      url: "https://github.com/AlexMollard"
+    - label: "RSS"
+      icon: "fas fa-rss"
+      url: "/feed.xml"
+
+sass:
+  style: compressed
+
+# Feed
+feed:
+  path: feed.xml
+
+# Sitemap
+sitemap:
+  exclude:
+    - /assets/
+
+# Permalinks for pretty URLs
+lsi: false
+future: false
+strict_front_matter: false
+
+# Caching include partials (performance)
+include_cache: true
+
+# Pagination
+paginate_path: "/page:num/"
+
+# Theme settings overrides
+search: true
+enable_copy_code_button: true

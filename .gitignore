@@ -6,3 +6,8 @@ vendor
 .bundle
 *_temp.yml
 Gemfile_dev*
+# Added by setup
+node_modules/
+*.log
+.DS_Store
+Thumbs.db

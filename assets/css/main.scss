@@ -1,0 +1,20 @@
+---
+---
+// Minimal Mistakes dark skin + custom tweaks
+@import "minimal-mistakes/skins/dark";
+@import "minimal-mistakes";
+
+// Custom accent color & typography adjustments
+:root {
+  --mm-accent-color: #4f8cff;
+}
+
+body {
+  font-feature-settings: "liga" 1, "calt" 1;
+}
+
+// Reduce container width for readability on very large screens
+.page__content, .archive__item { max-width: 860px; }
+
+// Code blocks styling tweak
+pre, code { font-size: 0.9rem; }
