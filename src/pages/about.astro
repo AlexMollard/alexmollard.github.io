@@ -3,8 +3,8 @@ import PageLayout from '../layouts/PageLayout.astro';
 ---
 <PageLayout title="About">
   <section class="intro">
-    <h2 class="tagline">🔧 Alex Mollard | <span class="accent">C++ Vulkan Enthusiast</span> & Graphics Tinkerer</h2>
-    <p class="lede">I tend to work on more engine features and not just graphics — diving deep into C++, Vulkan and the surrounding tooling; crafting pixels, pushing polygons and profiling pipelines.</p>
+    <h2 class="tagline">Hi, I'm Alex — <span class="accent">engine dev & systems generalist</span>.</h2>
+    <p class="lede">I build the foundations players rarely see but always feel: rendering backends, low‑level networking, audio pipelines, performance tooling, asset flows & the glue that keeps it all shippable. I enjoy turning complex subsystems into something teams can iterate on with confidence.</p>
     <div class="profile-links">
       <a href="https://github.com/AlexMollard" class="btn" rel="me" target="_blank">GitHub</a>
       <a href="https://www.linkedin.com/in/alex-mollard" class="btn" target="_blank">LinkedIn</a>
@@ -25,19 +25,25 @@ import PageLayout from '../layouts/PageLayout.astro';
       <li>Clang</li>
     </ul>
   </section>
+  <section class="breadth">
+    <h3>Across the Engine</h3>
+    <ul class="areas">
+      <li><strong>Rendering:</strong> Vulkan + legacy OpenGL paths, shader toolchains (GLSL/HLSL), frame pacing & GPU profiling.</li>
+      <li><strong>Engine Systems:</strong> asset build / hot‑reload flows, memory tracking, job systems, build configuration (CMake) & platform abstraction.</li>
+      <li><strong>Low‑level Networking:</strong> real‑time state sync, bandwidth/latency trade‑offs, reliability layers atop UDP, instrumentation.</li>
+      <li><strong>Audio:</strong> spatial mixing chains, streaming & voice allocation, performance budgeting.</li>
+      <li><strong>Tooling & Performance:</strong> frame capture analysis, CPU/GPU timing aggregation, fast iteration pipelines.</li>
+    </ul>
+  </section>
 
-  <section class="snake">
-    <h3>Activity</h3>
-    <p class="muted small">(GitHub contribution snake)</p>
-    <div class="snake-wrapper">
-      <!-- Placeholder: you can swap this image for a generated snake SVG if you use one in your GitHub profile README -->
-      <img src="https://raw.githubusercontent.com/AlexMollard/AlexMollard/output/github-contribution-grid-snake.svg" alt="GitHub contribution snake animation" loading="lazy" />
-    </div>
+  <section class="studio">
+    <h3>Day Job</h3>
+    <p>At <strong>Big Ant Studios</strong> I tend to work on “whatever moves the game forward”: from engine internals to rendering polish, performance hunts, build reliability, feature scaffolding and the occasional emergency fix minutes before a milestone. Wearing many hats keeps me honest about trade‑offs and developer experience.</p>
   </section>
 
   <section class="collab">
     <h3>Let's Collaborate</h3>
-    <p>I'm always excited to collaborate on interesting engine / rendering projects or discuss the latest in graphics programming & low‑level performance tuning. Feel free to reach out or open a discussion.</p>
+    <p>If you're exploring a rendering path, prototyping an engine feature, chasing a perf cliff or just want to chat about systems architecture — reach out. Happy to pair, brainstorm or review.</p>
   </section>
 
   <blockquote class="quote">💬 "Code is like humour. When you have to explain it, it's bad." <span class="author">— Cory House</span></blockquote>
@@ -60,9 +66,10 @@ import PageLayout from '../layouts/PageLayout.astro';
   .badges { list-style:none; padding:0; margin:0; display:flex; flex-wrap:wrap; gap:.5rem; }
   .badges li { background:var(--color-bg-alt); border:1px solid var(--color-border); padding:.4rem .7rem; font-size:.7rem; letter-spacing:.5px; font-weight:500; border-radius:999px; text-transform:uppercase; position:relative; animation:fadeIn .6s ease; }
   @keyframes fadeIn { from {opacity:0; transform:translateY(4px);} to {opacity:1; transform:translateY(0);} }
-  .snake { margin-top:2.75rem; }
-  .snake-wrapper { border:1px solid var(--color-border); background:var(--color-bg-alt); padding:1rem; border-radius:var(--radius-md); display:flex; justify-content:center; }
-  .snake-wrapper img { max-width:100%; height:auto; }
+  .breadth { margin-top:2.5rem; }
+  .areas { list-style: none; padding:0; margin:1rem 0 0; display:flex; flex-direction:column; gap:.85rem; }
+  .areas li { background:var(--color-bg-alt); border:1px solid var(--color-border); padding:.85rem 1rem; border-radius:var(--radius-md); line-height:1.45; }
+  .studio { margin-top:2.75rem; }
   .collab { margin-top:2.75rem; }
   blockquote.quote { font-style:italic; font-size:1rem; background:var(--color-bg-alt); }
   blockquote.quote .author { display:block; margin-top:.35rem; font-style:normal; font-size:.85rem; opacity:.75; }
