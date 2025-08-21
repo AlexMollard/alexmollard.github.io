@@ -6,7 +6,7 @@ permalink: /
 
 <section class="hero hero--compact">
   <h1 class="hero-title">Alex Mollard</h1>
-  <p class="hero-tag">C++ & Vulkan • real‑time rendering • engine internals</p>
+  <p class="hero-tag">C++ Engine & Systems Programming • Rendering • Tooling & Performance</p>
   <p class="hero-actions">
     <a class="btn-inline" href="/about/">About</a>
     <a class="btn-inline alt" href="https://github.com/AlexMollard" target="_blank" rel="noopener">GitHub ↗</a>
@@ -16,9 +16,9 @@ permalink: /
 
 <section class="quick-meta">
   <ul>
-    <li>C++ / Vulkan / Render Graphs</li>
-    <li>Tooling & profiling</li>
-    <li>Graphics learning notebook in public</li>
+    <li>Engine architecture & systems</li>
+    <li>C++ / Vulkan / performance</li>
+    <li>Tooling, profiling, iteration speed</li>
   </ul>
 </section>
 
