@@ -2,25 +2,71 @@
 import PageLayout from '../layouts/PageLayout.astro';
 ---
 <PageLayout title="About">
-  <p>Hi, I'm <strong>Alex</strong> — engineer, learner, and builder. This site is a lightweight stream of ideas & notes. I optimize for:</p>
-  <ol>
-    <li>Clarity over cleverness</li>
-    <li>Shipping over polishing forever</li>
-    <li>Learning in public</li>
-  </ol>
-  <h3>What I'm focused on</h3>
-  <ul>
-    <li>Crafting maintainable systems with strong boundaries</li>
-    <li>Developer experience & automation</li>
-    <li>Fast feedback loops / CI reliability</li>
-  </ul>
-  <h3>Principles</h3>
-  <div class="callout"><strong>Keep surface area small.</strong> Every dependency and feature is a maintenance contract. Be intentional.</div>
-  <h3>Uses</h3>
-  <p>Tools rotate, but recently: VS Code, GitHub Copilot, Go, TypeScript/React, Postgres, Redis, Docker, and a lot of plain text & whiteboards.</p>
-  <h3>Contact</h3>
-  <p>Reach out on <a href="https://github.com/AlexMollard">GitHub</a> or open an issue / discussion.</p>
+  <section class="intro">
+    <h2 class="tagline">🔧 Alex Mollard | <span class="accent">C++ Vulkan Enthusiast</span> & Graphics Tinkerer</h2>
+    <p class="lede">I tend to work on more engine features and not just graphics — diving deep into C++, Vulkan and the surrounding tooling; crafting pixels, pushing polygons and profiling pipelines.</p>
+    <div class="profile-links">
+      <a href="https://github.com/AlexMollard" class="btn" rel="me" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/alex-mollard" class="btn" target="_blank">LinkedIn</a>
+      <a href="/" class="btn secondary">Portfolio</a>
+    </div>
+  </section>
+
+  <section class="stack">
+    <h3>Core Stack</h3>
+    <ul class="badges">
+      <li>C++</li>
+      <li>Vulkan</li>
+      <li>GLSL</li>
+      <li>HLSL</li>
+      <li>CMake</li>
+      <li>OpenGL</li>
+      <li>C</li>
+      <li>Clang</li>
+    </ul>
+  </section>
+
+  <section class="snake">
+    <h3>Activity</h3>
+    <p class="muted small">(GitHub contribution snake)</p>
+    <div class="snake-wrapper">
+      <!-- Placeholder: you can swap this image for a generated snake SVG if you use one in your GitHub profile README -->
+      <img src="https://raw.githubusercontent.com/AlexMollard/AlexMollard/output/github-contribution-grid-snake.svg" alt="GitHub contribution snake animation" loading="lazy" />
+    </div>
+  </section>
+
+  <section class="collab">
+    <h3>Let's Collaborate</h3>
+    <p>I'm always excited to collaborate on interesting engine / rendering projects or discuss the latest in graphics programming & low‑level performance tuning. Feel free to reach out or open a discussion.</p>
+  </section>
+
+  <blockquote class="quote">💬 "Code is like humour. When you have to explain it, it's bad." <span class="author">— Cory House</span></blockquote>
+
   <hr />
-  <p>This site is intentionally minimal – no trackers, no heavy JS. View the source on GitHub.</p>
-  <p>Thanks for visiting.</p>
+  <p class="fine-print">This site stays intentionally lean: no trackers, minimal JS islands, content first.</p>
 </PageLayout>
+
+<style>
+  .intro { display:flex; flex-direction:column; gap:1rem; }
+  .tagline { font-size:clamp(1.4rem,3.2vw,2rem); margin:0; font-weight:600; }
+  .tagline .accent { color: var(--color-accent); }
+  .lede { font-size:1.05rem; max-width:60ch; }
+  .profile-links { display:flex; flex-wrap:wrap; gap:.65rem; margin-top:.25rem; }
+  .btn { background:var(--color-accent); color:#fff; padding:.55rem .9rem; font-size:.85rem; font-weight:500; border-radius:var(--radius-sm); display:inline-flex; align-items:center; gap:.4rem; box-shadow:var(--shadow-sm); transition:background-color .25s var(--ease), transform .25s var(--ease); }
+  .btn:hover { text-decoration:none; background:linear-gradient(90deg,var(--color-accent),#7ab9ff); transform:translateY(-2px); }
+  .btn.secondary { background:var(--color-bg-alt); color:var(--color-fg); border:1px solid var(--color-border); }
+  .btn.secondary:hover { background:var(--color-code); }
+  .stack { margin-top:2.5rem; }
+  .badges { list-style:none; padding:0; margin:0; display:flex; flex-wrap:wrap; gap:.5rem; }
+  .badges li { background:var(--color-bg-alt); border:1px solid var(--color-border); padding:.4rem .7rem; font-size:.7rem; letter-spacing:.5px; font-weight:500; border-radius:999px; text-transform:uppercase; position:relative; animation:fadeIn .6s ease; }
+  @keyframes fadeIn { from {opacity:0; transform:translateY(4px);} to {opacity:1; transform:translateY(0);} }
+  .snake { margin-top:2.75rem; }
+  .snake-wrapper { border:1px solid var(--color-border); background:var(--color-bg-alt); padding:1rem; border-radius:var(--radius-md); display:flex; justify-content:center; }
+  .snake-wrapper img { max-width:100%; height:auto; }
+  .collab { margin-top:2.75rem; }
+  blockquote.quote { font-style:italic; font-size:1rem; background:var(--color-bg-alt); }
+  blockquote.quote .author { display:block; margin-top:.35rem; font-style:normal; font-size:.85rem; opacity:.75; }
+  .fine-print { font-size:.8rem; opacity:.65; }
+  .small { font-size:.7rem; }
+  @media (max-width:640px) { .profile-links { gap:.5rem; } .btn { font-size:.75rem; padding:.5rem .75rem; } }
+</style>
