@@ -1,5 +1,4 @@
 ---
----
 layout: page
 title: About
 permalink: /about/
@@ -35,10 +34,5 @@ Feel free to reach out on <a href="https://github.com/AlexMollard">GitHub</a> or
 
 This site is intentionally minimal – no trackers, no heavy JS. View the source on GitHub.
 
-## Contact
-
-You can find me on GitHub or connect via the links in the site header/footer. I'm open to collaboration on rendering tech, tooling, or focused engine subsystems.
-
-> “If you don’t understand the GPU, the GPU will still run — it just won’t run for you.”
-
 Thanks for visiting.
+
