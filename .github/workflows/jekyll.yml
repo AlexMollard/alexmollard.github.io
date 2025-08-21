@@ -29,10 +29,29 @@ concurrency:
 jobs:
   # Build job
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Install Ruby (fallback for self-hosted runners)
+        run: |
+          # Check if Ruby is already available
+          if ! command -v ruby &> /dev/null; then
+            echo "Ruby not found, installing manually..."
+            sudo apt-get update
+            sudo apt-get install -y git curl autoconf bison build-essential libssl-dev libyaml-dev libreadline-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm-dev
+            git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+            export PATH="$HOME/.rbenv/bin:$PATH"
+            eval "$(rbenv init -)"
+            git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
+            ~/.rbenv/plugins/ruby-build/install.sh
+            rbenv install 3.1.0
+            rbenv global 3.1.0
+            ruby -v
+            gem install bundler
+          else
+            echo "Ruby is already available: $(ruby -v)"
+          fi
       - name: Setup Ruby
         uses: ruby/setup-ruby@8575951200e472d5f2d95c625da0c7bec8217c42 # v1.161.0
         with:
@@ -44,7 +63,13 @@ jobs:
         uses: actions/configure-pages@v4
       - name: Build with Jekyll
         # Outputs to the './_site' directory by default
-        run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
+        run: |
+          # Ensure rbenv is in PATH if it was installed manually
+          if [ -d "$HOME/.rbenv" ]; then
+            export PATH="$HOME/.rbenv/bin:$PATH"
+            eval "$(rbenv init -)"
+          fi
+          bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: production
       - name: Upload artifact
@@ -56,7 +81,7 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     needs: build
     steps:
       - name: Deploy to GitHub Pages
