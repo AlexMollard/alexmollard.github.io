@@ -1,11 +1,12 @@
 ---
-layout: archive
+layout: page
 title: "Blog"
 permalink: /blog/
-author_profile: true
 excerpt: "All posts — graphics, C++, engine experiments, and notes."
 ---
 
+<ul>
 {% for post in site.posts %}
-  {% include archive-single.html %}
+  <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a> <small>{{ post.date | date: '%Y-%m-%d' }}</small></li>
 {% endfor %}
+</ul>

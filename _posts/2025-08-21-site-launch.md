@@ -1,5 +1,5 @@
 ---
-layout: single
+layout: post
 title: "Site Relaunch with Minimal Mistakes"
 excerpt: "Fresh dark theme, cleaner structure, automated deploys via GitHub Actions."
 categories: [blog]

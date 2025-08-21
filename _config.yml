@@ -12,8 +12,6 @@ lang: en
 markdown: kramdown
 highlighter: rouge
 permalink: /:categories/:title/
-paginate: 5
-paginate_path: "/page:num/"
 
 # Remote theme
 remote_theme: andrewbanchich/forty-jekyll-theme
@@ -23,7 +21,6 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
-  - jekyll-paginate
   - jekyll-include-cache
   - jekyll-remote-theme
 
@@ -105,8 +102,6 @@ strict_front_matter: false
 # Caching include partials (performance)
 include_cache: true
 
-# Pagination
-paginate_path: "/page:num/"
 
 # Theme toggles (not all may apply to the remote theme)
 search: false
