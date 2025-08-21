@@ -11,6 +11,7 @@ gem "jekyll-paginate", "~> 1.1"
 gem "jekyll-include-cache", "~> 0.2"
 
 # Remote theme helper
+gem "jekyll-remote-theme", "~> 0.4"
 
 group :development do
   gem "bundler", ">= 2.4"

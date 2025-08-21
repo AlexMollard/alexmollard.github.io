@@ -1,20 +1,7 @@
 ---
 title: "C++ Vulkan Graphics Experiments"
-layout: single
-author_profile: true
-classes: wide
+layout: landing
 excerpt: "Pushing pixels & polygons — modern rendering, engine architecture, and low-level performance adventures."
-header:
-  overlay_color: "#000"
-  overlay_filter: "0.55"
-  overlay_image: /assets/images/hero-dark.jpg
-  actions:
-    - label: "GitHub"
-      url: "https://github.com/AlexMollard"
-    - label: "LinkedIn"
-      url: "https://www.linkedin.com/in/"
-    - label: "Portfolio"
-      url: "https://www.alexmollard.dev/"
 ---
 
 <div class="hero-intro">

@@ -15,8 +15,8 @@ permalink: /:categories/:title/
 paginate: 5
 paginate_path: "/page:num/"
 
-# Theme (custom lightweight in-repo layouts & CSS)
-theme: null
+# Remote theme
+remote_theme: andrewbanchich/forty-jekyll-theme
 
 # Plugins (GitHub Actions build supports these)
 plugins:
@@ -25,6 +25,7 @@ plugins:
   - jekyll-seo-tag
   - jekyll-paginate
   - jekyll-include-cache
+  - jekyll-remote-theme
 
 # Author profile
 author:
@@ -67,8 +68,6 @@ defaults:
       type: posts
     values:
       layout: post
-      comments: false
-      share: false
   - scope:
       path: ""
       type: pages
@@ -109,6 +108,5 @@ include_cache: true
 # Pagination
 paginate_path: "/page:num/"
 
-# Custom theme toggles
+# Theme toggles (not all may apply to the remote theme)
 search: false
-enable_copy_code_button: false

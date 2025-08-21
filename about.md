@@ -1,6 +1,7 @@
 ---
 title: About
 permalink: /about/
+layout: page
 excerpt: "C++ Vulkan enthusiast & graphics tinkerer."
 ---
 
