@@ -26,14 +26,7 @@ jobs:
           node-version: 20
           cache: npm
       - name: Install dependencies
-        run: |
-          if [ -f package-lock.json ]; then
-            echo "Using npm ci (lockfile present)";
-            npm ci;
-          else
-            echo "No package-lock.json found – using npm install";
-            npm install --no-audit --no-fund;
-          fi
+  run: npm ci
       - name: Build
         run: npm run build
       - name: Upload artifact
