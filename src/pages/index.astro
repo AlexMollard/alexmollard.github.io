@@ -5,7 +5,17 @@ import ProjectCard from "../components/ProjectCard.astro";
 import { featured, projects } from "../data/projects";
 ---
 <Layout>
-  <Hero />
+  <Hero 
+    title="Alex Mollard"
+    tagline="Systems & Graphics Engineer — C++ / Vulkan / Engine Architecture"
+    description="I build low-latency systems, rendering + game engine infrastructure, audio / networking stacks, and sharp developer tooling. I care about mechanical sympathy, determinism, and elegant, well-instrumented code paths." />
+
+  <section id="about">
+    <h2>About</h2>
+    <p class="section-lead">I’m a C++ systems programmer with a bias for profiling first, shipping lean abstractions, and keeping feedback loops tight. My work spans engine / runtime architecture, GPU + graphics (Vulkan / OpenGL), concurrency primitives, low-latency networking, and tooling that turns opaque performance behavior into clear, actionable insight.</p>
+    <p>Whether I’m designing a frame graph, hand‑optimizing a hot code path, sketching a deterministic scheduler, or building a benchmark harness to falsify assumptions, my goal is the same: <em>reduce ambiguity</em>, surface constraints early, and enable confident iteration.</p>
+    <p>Strong opinions: measure before theorizing, name things precisely, isolate sources of nondeterminism, and make failure modes <span class="mono">grep</span>-able.</p>
+  </section>
 
   <section id="projects">
     <h2>Selected Projects</h2>
@@ -24,20 +34,46 @@ import { featured, projects } from "../data/projects";
   </section>
 
   <section id="expertise">
-    <h2>Expertise</h2>
-    <p class="section-lead">I design and build performance-critical backends, distributed infrastructure, low-latency data pipelines, and developer tooling. Strengths include:</p>
+    <h2>Focus Areas</h2>
+    <p class="section-lead">A through-line across my work: visibility → control → performance. I gravitate toward infrastructure where a 2% latency tail improvement or a clearer profiling story has multiplicative impact.</p>
     <ul>
-      <li><strong>Systems Performance:</strong> profiling, flame graphs, CPU cache behavior, branch prediction, NUMA, lock-free & wait-free patterns.</li>
-      <li><strong>Concurrency & Parallelism:</strong> reactor loops, job systems, structured concurrency, backpressure, memory ordering.</li>
-      <li><strong>Networking:</strong> protocol design, message framing, batching, zero-copy IO, kernel bypass experiments.</li>
-      <li><strong>Reliability:</strong> deterministic simulation, chaos / fault injection, observability, tight feedback loops.</li>
-      <li><strong>Tooling:</strong> build acceleration, custom allocators, benchmarking harnesses, static analysis extensions.</li>
+      <li><strong>Rendering & Engine Runtime:</strong> Vulkan 1.3 feature adoption, frame graph orchestration, GPU resource lifetime, hot‑path cache friendliness.</li>
+      <li><strong>Concurrency & Scheduling:</strong> work-stealing job systems, structured concurrency, memory ordering correctness, low jitter task dispatch.</li>
+      <li><strong>Networking & Protocols:</strong> ENet / reliable UDP design, packet framing, batching strategies, backpressure & flow control, zero‑copy pathways.</li>
+      <li><strong>Tooling & Instrumentation:</strong> custom allocators, contention tracing, flame graphs, statistical latency analysis, build & iteration speed.</li>
     </ul>
+  </section>
+
+  <section id="exploring">
+    <h2>Currently Exploring</h2>
+    <ul>
+      <li>Vulkan: dynamic rendering paths, mesh shading pipeline experiments, GPU-driven resource compaction.</li>
+      <li>Audio visualization pipeline optimizations (FFT windowing trade‑offs & SIMD hotspots).</li>
+      <li>Reliable UDP pattern variants & congestion signals in ENet-style protocols.</li>
+    </ul>
+  </section>
+
+  <section id="stack">
+    <h2>Core Stack & Tools</h2>
+    <p>
+      <span class="pill">C++20</span>
+      <span class="pill">Vulkan</span>
+      <span class="pill">OpenGL</span>
+      <span class="pill">OpenAL</span>
+      <span class="pill">ImGui</span>
+      <span class="pill">ENet</span>
+      <span class="pill">Linux</span>
+      <span class="pill">clang / MSVC</span>
+      <span class="pill">CMake</span>
+      <span class="pill">Benchmarking</span>
+      <span class="pill">Profiling</span>
+    </p>
   </section>
 
   <section id="contact">
     <h2>Get in touch</h2>
-    <p class="section-lead">Open to discussing systems challenges, collaboration, or niche debugging sessions. Best via email.</p>
-    <p><a class="btn primary" href="mailto:alex@mollard.dev">alex@mollard.dev</a></p>
+  <p class="section-lead">Open to consulting on performance investigations, engine / runtime architecture, or targeted debugging deep-dives.</p>
+  <p><a class="btn primary" href="mailto:alexmollard@protonmail.com">alexmollard@protonmail.com</a></p>
+  <p style="font-size:.8rem; color:var(--text-dim); margin-top:.5rem;">Prefer concise context + reproduction notes; I’ll reply with initial angles / measurement strategy.</p>
   </section>
 </Layout>
