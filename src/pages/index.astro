@@ -1,13 +1,58 @@
 ---
-// Minimal Astro starter style index page
+import Layout from "../components/Layout.astro";
+import Hero from "../components/Hero.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+
+const featured = [
+  {
+    name: 'ZeroMQ Market Data Fanout',
+    blurb: 'Ultra-low latency market data distribution layer using lock-free ring buffers and kernel bypass networking experiments.',
+    stack: ['C++20', 'ZeroMQ', 'Linux', 'Perf'],
+    repo: 'https://github.com/AlexMollard',
+  },
+  {
+    name: 'Deterministic Job Scheduler',
+    blurb: 'High-throughput async job system with work-stealing, structured concurrency and deterministic simulation mode.',
+    stack: ['C++20', 'Atomics', 'Concurrency', 'Profiling'],
+  },
+  {
+    name: 'Binary Format Toolkit',
+    blurb: 'Header-only serde + codegen for describing and fuzzing custom low-level binary protocols and file formats.',
+    stack: ['C++17', 'Fuzzing', 'Clang', 'Codegen'],
+  },
+  {
+    name: 'Latency Lab',
+    blurb: 'Microbenchmark harness + visualizer for cross-platform latency characterization (timers, syscalls, queues, allocators).',
+    stack: ['C++20', 'Benchmark', 'Visualization'],
+  }
+];
 ---
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Alex Mollard</title>
-  </head>
-  <body>
-    <h1>Alex Mollard</h1>
-    <p>Minimal Astro starter style page.</p>
-  </body>
-</html>
+<Layout>
+  <Hero />
+
+  <section id="projects">
+    <h2>Selected Projects</h2>
+    <p class="section-lead">Some focused engineering efforts and exploration work. I care about clarity, mechanical sympathy, and correctness under load.</p>
+    <div class="grid">
+      {featured.map(p => <ProjectCard {...p} />)}
+    </div>
+  </section>
+
+  <section id="expertise">
+    <h2>Expertise</h2>
+    <p class="section-lead">I design and build performance-critical backends, distributed infrastructure, low-latency data pipelines, and developer tooling. Strengths include:</p>
+    <ul>
+      <li><strong>Systems Performance:</strong> profiling, flame graphs, CPU cache behavior, branch prediction, NUMA, lock-free & wait-free patterns.</li>
+      <li><strong>Concurrency & Parallelism:</strong> reactor loops, job systems, structured concurrency, backpressure, memory ordering.</li>
+      <li><strong>Networking:</strong> protocol design, message framing, batching, zero-copy IO, kernel bypass experiments.</li>
+      <li><strong>Reliability:</strong> deterministic simulation, chaos / fault injection, observability, tight feedback loops.</li>
+      <li><strong>Tooling:</strong> build acceleration, custom allocators, benchmarking harnesses, static analysis extensions.</li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h2>Get in touch</h2>
+    <p class="section-lead">Open to discussing systems challenges, collaboration, or niche debugging sessions. Best via email.</p>
+    <p><a class="btn primary" href="mailto:alex@mollard.dev">alex@mollard.dev</a></p>
+  </section>
+</Layout>

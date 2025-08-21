@@ -1,19 +1,16 @@
+# dependencies
 node_modules
-.astro
+pnpm-lock.yaml
+
+# build output
 dist
-.DS_Store
-coverage
-*.log
-_site
-.sass-cache
-.jekyll-cache
-.jekyll-metadata
-vendor
-.bundle
-*_temp.yml
-Gemfile_dev*
-# Added by setup
-node_modules/
-*.log
-.DS_Store
-Thumbs.db
+.astro
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env
+.env*

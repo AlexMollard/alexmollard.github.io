@@ -1,8 +1,20 @@
 {
-  "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
-    "baseUrl": "."
+    "baseUrl": ".",
+    "paths": {},
+    "types": ["astro/ambient"],
+    "jsx": "preserve",
+    "jsxImportSource": "react",
+    "allowJs": true,
+    "strict": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "target": "ES2022",
+    "skipLibCheck": true
   },
-  "include": ["src", "astro.config.*", "env.d.ts", "src/env.d.ts"],
-  "exclude": ["dist", "node_modules"]
+  "include": ["src", "astro.config.*", "types"],
+  "exclude": ["dist"]
 }

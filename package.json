@@ -1,19 +1,22 @@
 {
-  "name": "alexmollard-site",
-  "private": true,
-  "version": "1.0.0",
+  "name": "alexmollard-landing",
   "type": "module",
-  "packageManager": "npm@10.8.1",
+  "version": "0.0.1",
+  "private": true,
   "scripts": {
     "dev": "astro dev",
+    "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
+    "check": "astro check",
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/rss": "^4.0.0",
-    "@astrojs/sitemap": "^3.1.0",
-    "astro": "^4.10.0",
-    "typescript": "^5.5.0"
+    "astro": "^4.13.1",
+    "@astrojs/sitemap": "^3.1.5"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.7.0",
+    "typescript": "^5.5.4"
   }
 }
