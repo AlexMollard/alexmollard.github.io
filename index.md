@@ -1,4 +1,23 @@
 ---
+layout: home
+title: Home
+permalink: /
+---
+
+<div class="hero">
+  <h1>Hi, I'm Alex.</h1>
+  <p class="lead">I build thoughtful software with a bias for clarity, simplicity, and shipping things that matter.</p>
+  <p style="margin-top:1.1rem;">
+    <a class="btn-inline" href="/about/">More about me →</a>
+  </p>
+</div>
+
+<h2 id="posts" class="posts-heading">Recent Posts</h2>
+
+{% if site.posts.size == 0 %}
+<p style="text-align:center; opacity:.65;">Nothing here yet — first post coming soon.</p>
+{% endif %}
+---
 title: "C++ Vulkan Graphics Experiments"
 layout: landing
 excerpt: "Pushing pixels & polygons — modern rendering, engine architecture, and low-level performance adventures."

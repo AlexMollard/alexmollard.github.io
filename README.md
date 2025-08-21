@@ -1,59 +1,63 @@
-# alexmollard.github.io
+<h1 align="center">alexmollard.github.io</h1>
+<p align="center">A modern, clean, minimal Jekyll site – auto‑deployed with GitHub Actions.</p>
 
-Personal website powered by **Jekyll** with the **Minimal Mistakes** dark skin, automatically built & deployed via **GitHub Actions** to GitHub Pages.
+## ✨ Features
 
-## Local Development
+- Lightweight: default Jekyll + Minima with lean custom styling
+- Auto dark/light via `prefers-color-scheme`
+- SEO + Atom feed (jekyll-seo-tag, jekyll-feed)
+- GitHub Pages deployment via Actions (`deploy.yml`)
+- No trackers, no JS build pipeline, just Markdown → HTML
 
-Prerequisites: Ruby (>= 3.1) and Bundler.
+## 📁 Structure
 
-Install dependencies and run the local server:
+```
+Gemfile                  # Dependencies (Jekyll + plugins)
+_config.yml              # Site config & metadata
+assets/css/main.scss     # Custom design layer
+index.md                 # Hero + recent posts
+about.md                 # About page
+_posts/                  # Blog posts (add your own)
+404.html                 # Friendly 404
+.github/workflows/deploy.yml  # Build & deploy pipeline
+```
+
+## 🧪 Local Development
+
+Prereqs: Ruby >= 3.1 & Bundler.
 
 ```powershell
 bundle install
 bundle exec jekyll serve --livereload
 ```
 
-Site will be available at http://127.0.0.1:4000
+Visit http://127.0.0.1:4000
 
-## Structure
+## ✍️ Creating a Post
 
-Key files/directories:
-
-- `_config.yml` – Site configuration & theme settings
-- `Gemfile` – Ruby gems including Jekyll and plugins
-- `assets/css/main.scss` – Imports theme + custom overrides
-- `_data/navigation.yml` – Primary navigation links
-- `index.md` – Homepage (uses `home` layout showing posts)
-- `about.md` – About page
-- `.github/workflows/pages.yml` – Build & deploy workflow
-
-## Adding Posts
-
-Create a new file in `_posts` named `YYYY-MM-DD-title.md` with front matter:
+Create `_posts/YYYY-MM-DD-title.md`:
 
 ```markdown
 ---
-title: My New Post
-categories: [blog]
-tags: [tag1, tag2]
-excerpt: Short summary.
+title: Focus Beats Complexity
+excerpt: Short teaser sentence.
+tags: [focus]
 ---
 
-Your content here.
+Write in Markdown. Front matter can include `tags`, `excerpt`, `image`, etc.
 ```
 
-## Theming
+## 🚀 Deployment
 
-Global dark styling is set via `minimal_mistakes_skin: "dark"` in `_config.yml`. Override or extend styling in `assets/css/main.scss`.
+Push to `master`. GitHub Actions will build Jekyll and publish `_site` to GitHub Pages using the official Pages actions.
 
-## Deployment
+Make sure Pages is set to "GitHub Actions" in the repo settings (Settings → Pages → Build and deployment).
 
-Pushing changes to `master` triggers the GitHub Actions workflow which:
+## 🔧 Customization
 
-1. Installs Ruby & dependencies
-2. Builds the site with Jekyll
-3. Deploys the generated `_site` to GitHub Pages
+Edit `assets/css/main.scss` for styling tweaks. Update metadata in `_config.yml`. Hero text lives in `index.md`.
 
-## License
+## 📄 License
 
-Content © Alex Mollard. Theme © Minimal Mistakes contributors (MIT License).
+Content © Alex Mollard. Theme base © Minima (MIT). Custom enhancements MIT.
+
