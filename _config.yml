@@ -1,7 +1,7 @@
 title: "Alex Mollard"
 name: "Alex Mollard"
 description: >-
-  Personal site and blog. Thoughts on software engineering, data, and projects.
+  C++ Vulkan enthusiast & graphics tinkerer. Exploring modern rendering, engines, low-level systems, and performance craftsmanship.
 url: "https://alexmollard.github.io"
 baseurl: ""
 
@@ -32,7 +32,7 @@ plugins:
 author:
   name: "Alex Mollard"
   avatar: "/assets/images/avatar.svg"
-  bio: "Software engineer | Building reliable, elegant systems."
+  bio: "C++ • Vulkan • Rendering pipelines • Engine architecture • Low-level performance exploration."
   location: ""
   links:
     - label: "GitHub"
@@ -41,6 +41,9 @@ author:
     - label: "LinkedIn"
       icon: "fab fa-linkedin"
       url: "https://www.linkedin.com/in/"
+    - label: "Portfolio"
+      icon: "fas fa-globe"
+      url: "https://www.alexmollard.dev/"
 
 include:
   - _pages

@@ -18,3 +18,10 @@ body {
 
 // Code blocks styling tweak
 pre, code { font-size: 0.9rem; }
+
+// Language badge color accents (basic mapping)
+.lang-c\+\+ { background:#14324b; color:#c8e1ff; }
+.lang-c { background:#173b3f; color:#c8f7ff; }
+.lang-html { background:#402012; color:#ffd5c2; }
+.project-card a { text-decoration:none; }
+.project-card a:hover { text-decoration:underline; }
