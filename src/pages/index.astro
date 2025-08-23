@@ -15,22 +15,16 @@ import { featured, projects } from "../data/projects";
     <div class="about-grid">
       <p class="section-lead">I'm a game developer at Big Ant Studios focused on tools, networking, memory optimization, and overall game stability. Recent work spans implementing WebSockets and online flows, building leak‑tracking tools, and fixing crashes across systems. Shipped titles include TIEBREAK (ATP/WTA), Cricket 24, AFL 23, Rugby 25, AFL 26, and Rugby League 26.</p>
       <div class="about-body">
-        <p>At Big Ant Studios I focus on internal tools, networking implementations, memory optimization, and crash triage across the codebase. I often act as my own lead, jumping between systems and titles to unblock teams and land fixes quickly.</p>
-        <ul>
-          <li>Implemented WebSocket stack and repaired online flows using PlayFab and low‑level sockets.</li>
-          <li>Built a memory tracking tool to surface leaks/regressions and drive performance/footprint wins.</li>
-          <li>Hardened systems by fixing crashes across gameplay, rendering, UI, and platform-specific layers.</li>
-        </ul>
-        <p>Shipped and supported titles include:</p>
-        <ul class="compact">
-          <li>TIEBREAK (ATP/WTA)</li>
-          <li>Cricket 24</li>
-          <li>AFL 23</li>
-          <li>Rugby 25</li>
-          <li>AFL 26</li>
-          <li>Rugby League 26</li>
-        </ul>
-        <p>Outside of studio work, I build engines and renderers (Vulkan/OpenGL), experiment with procedural systems, and maintain tools like an audio visualizer—always with an eye on performance and player experience.</p>
+        <p>I build internal tools, implement networking (WebSockets, PlayFab + low‑level sockets), optimize memory with leak‑tracking, and tackle crash triage across gameplay, rendering, UI, and platform layers—often self‑leading across teams to unblock and stabilize builds.</p>
+        <p class="shipped"><strong>Shipped:</strong>
+          <span class="pill">TIEBREAK (ATP/WTA)</span>
+          <span class="pill">Cricket 24</span>
+          <span class="pill">AFL 23</span>
+          <span class="pill">Rugby 25</span>
+          <span class="pill">AFL 26</span>
+          <span class="pill">Rugby League 26</span>
+        </p>
+        <p>Outside the studio I prototype engines/renderers (Vulkan/OpenGL), explore procedural systems, and maintain an audio visualizer—always with an eye on performance and player experience.</p>
       </div>
     </div>
   </section>
@@ -105,13 +99,15 @@ import { featured, projects } from "../data/projects";
 <style>
 /* About section layout improvements */
 .about { margin-top: .5rem; }
-.about .about-grid { display: grid; gap: 1rem 2rem; align-items: start; }
+.about .about-grid { display: grid; gap: .75rem 1.5rem; align-items: start; }
 .about .section-lead { margin: 0; }
-.about .about-body { line-height: 1.65; }
-.about .about-body p { margin: 0 0 .9rem; }
+.about .about-body { line-height: 1.55; }
+.about .about-body p { margin: 0 0 .6rem; }
 .about ul { margin: 0 0 .9rem 1.1rem; }
 .about ul.compact { margin: .25rem 0 1rem 1.1rem; }
 .about li { margin: .25rem 0; }
+.about .shipped { display:flex; flex-wrap:wrap; gap:.4rem .5rem; align-items:center; }
+.about .shipped strong { margin-right:.25rem; }
 
 @media (min-width: 880px) {
   .about .about-grid { grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); }
