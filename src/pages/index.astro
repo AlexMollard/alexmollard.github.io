@@ -7,19 +7,37 @@ import { featured, projects } from "../data/projects";
 <Layout>
   <Hero 
     title="Alex Mollard"
-    tagline="Systems & Graphics Engineer — C++ / Vulkan / Engine Architecture"
-    description="I build low-latency systems, rendering + game engine infrastructure, audio / networking stacks, and sharp developer tooling. I care about mechanical sympathy, determinism, and elegant, well-instrumented code paths." />
+    tagline="Game & Graphics Programmer — Professional Sports Games / Engine Development / Vulkan"
+    description="I develop professional sports games at Big Ant Studios and build game engines, graphics renderers, and interactive systems. From shipping commercial titles like TIEBREAK, Cricket 24, and AFL 23 to crafting Vulkan renderers and audio visualizers, I focus on performance, player experience, and robust architectures." />
 
-  <section id="about">
+  <section id="about" class="about">
     <h2>About</h2>
-    <p class="section-lead">I’m a C++ systems programmer with a bias for profiling first, shipping lean abstractions, and keeping feedback loops tight. My work spans engine / runtime architecture, GPU + graphics (Vulkan / OpenGL), concurrency primitives, low-latency networking, and tooling that turns opaque performance behavior into clear, actionable insight.</p>
-    <p>Whether I’m designing a frame graph, hand‑optimizing a hot code path, sketching a deterministic scheduler, or building a benchmark harness to falsify assumptions, my goal is the same: <em>reduce ambiguity</em>, surface constraints early, and enable confident iteration.</p>
-    <p>Strong opinions: measure before theorizing, name things precisely, isolate sources of nondeterminism, and make failure modes <span class="mono">grep</span>-able.</p>
+    <div class="about-grid">
+      <p class="section-lead">I'm a game developer at Big Ant Studios focused on tools, networking, memory optimization, and overall game stability. Recent work spans implementing WebSockets and online flows, building leak‑tracking tools, and fixing crashes across systems. Shipped titles include TIEBREAK (ATP/WTA), Cricket 24, AFL 23, Rugby 25, AFL 26, and Rugby League 26.</p>
+      <div class="about-body">
+        <p>At Big Ant Studios I focus on internal tools, networking implementations, memory optimization, and crash triage across the codebase. I often act as my own lead, jumping between systems and titles to unblock teams and land fixes quickly.</p>
+        <ul>
+          <li>Implemented WebSocket stack and repaired online flows using PlayFab and low‑level sockets.</li>
+          <li>Built a memory tracking tool to surface leaks/regressions and drive performance/footprint wins.</li>
+          <li>Hardened systems by fixing crashes across gameplay, rendering, UI, and platform-specific layers.</li>
+        </ul>
+        <p>Shipped and supported titles include:</p>
+        <ul class="compact">
+          <li>TIEBREAK (ATP/WTA)</li>
+          <li>Cricket 24</li>
+          <li>AFL 23</li>
+          <li>Rugby 25</li>
+          <li>AFL 26</li>
+          <li>Rugby League 26</li>
+        </ul>
+        <p>Outside of studio work, I build engines and renderers (Vulkan/OpenGL), experiment with procedural systems, and maintain tools like an audio visualizer—always with an eye on performance and player experience.</p>
+      </div>
+    </div>
   </section>
 
   <section id="projects">
-    <h2>Selected Projects</h2>
-    <p class="section-lead">A mix of graphics, engines, audio, networking, and systems performance explorations. Focused on clarity, mechanical sympathy, and correctness under load.</p>
+    <h2>Featured Work</h2>
+    <p class="section-lead">Professional sports games, modern graphics engines, and interactive systems. From shipped commercial titles to experimental Vulkan renderers and procedural generation.</p>
     <div class="grid">
       {featured.map(p => <ProjectCard {...p} />)}
     </div>
@@ -27,46 +45,54 @@ import { featured, projects } from "../data/projects";
 
   <section id="all-projects">
     <h2>More Projects</h2>
-    <p class="section-lead">Broader set including experiments, learning sandboxes, and internal tooling prototypes.</p>
+    <p class="section-lead">Game development experiments, graphics programming, audio tools, simulation systems, and educational resources spanning my journey from student projects to professional work.</p>
     <div class="grid">
       {projects.filter(p => !p.featured).map(p => <ProjectCard {...p} />)}
     </div>
   </section>
 
   <section id="expertise">
-    <h2>Focus Areas</h2>
-    <p class="section-lead">A through-line across my work: visibility → control → performance. I gravitate toward infrastructure where a 2% latency tail improvement or a clearer profiling story has multiplicative impact.</p>
+    <h2>Expertise Areas</h2>
+    <p class="section-lead">Core competencies built through professional game development, engine programming, and graphics systems work.</p>
     <ul>
-      <li><strong>Rendering & Engine Runtime:</strong> Vulkan 1.3 feature adoption, frame graph orchestration, GPU resource lifetime, hot‑path cache friendliness.</li>
-      <li><strong>Concurrency & Scheduling:</strong> work-stealing job systems, structured concurrency, memory ordering correctness, low jitter task dispatch.</li>
-      <li><strong>Networking & Protocols:</strong> ENet / reliable UDP design, packet framing, batching strategies, backpressure & flow control, zero‑copy pathways.</li>
-      <li><strong>Tooling & Instrumentation:</strong> custom allocators, contention tracing, flame graphs, statistical latency analysis, build & iteration speed.</li>
+  <li><strong>Professional Game Development:</strong> Sports game programming, performance optimization for console/PC, gameplay systems, and shipping commercial titles.</li>
+      <li><strong>Graphics & Rendering:</strong> Modern Vulkan 1.3 implementation, OpenGL pipelines, PBR systems, HDR workflows, and custom engine architecture.</li>
+      <li><strong>Game Engine Development:</strong> Modular engine design, asset management, component systems, audio integration, and cross-platform compatibility.</li>
+      <li><strong>Procedural Systems:</strong> Terrain generation with Perlin noise, cellular automata, physics simulation, and algorithmic content creation.</li>
+      <li><strong>Tools & Education:</strong> Developer tooling, educational content creation, mentoring, and open-source contributions to the C++ community.</li>
     </ul>
   </section>
 
   <section id="exploring">
-    <h2>Currently Exploring</h2>
+    <h2>Currently Working On</h2>
     <ul>
-      <li>Vulkan: dynamic rendering paths, mesh shading pipeline experiments, GPU-driven resource compaction.</li>
-      <li>Audio visualization pipeline optimizations (FFT windowing trade‑offs & SIMD hotspots).</li>
-      <li>Reliable UDP pattern variants & congestion signals in ENet-style protocols.</li>
+      <li><strong>Woven Minds Studios:</strong> Developing an ambitious game project with focus on innovative gameplay and technical excellence.</li>
+      <li><strong>Vulkan Engine Development:</strong> Expanding SlimeProject with modern rendering features, GPU-driven techniques, and performance optimization.</li>
+      <li><strong>Audio Visualization:</strong> Enhancing the Fly audio player with advanced DSP algorithms and real-time visual feedback systems.</li>
+      <li><strong>Educational Content:</strong> Growing CppOdyssey with advanced C++ tutorials, graphics programming guides, and engine development patterns.</li>
     </ul>
   </section>
 
   <section id="stack">
-    <h2>Core Stack & Tools</h2>
+    <h2>Technologies & Tools</h2>
     <p>
       <span class="pill">C++20</span>
       <span class="pill">Vulkan</span>
       <span class="pill">OpenGL</span>
+      <span class="pill">Game Development</span>
+      <span class="pill">Unity</span>
       <span class="pill">OpenAL</span>
       <span class="pill">ImGui</span>
       <span class="pill">ENet</span>
-      <span class="pill">Linux</span>
-      <span class="pill">clang / MSVC</span>
+      <span class="pill">MySQL</span>
+      <span class="pill">Procedural Generation</span>
+      <span class="pill">PBR</span>
+      <span class="pill">HDR</span>
+      <span class="pill">Cellular Automata</span>
+      <span class="pill">Physics Simulation</span>
       <span class="pill">CMake</span>
-      <span class="pill">Benchmarking</span>
-      <span class="pill">Profiling</span>
+      <span class="pill">Visual Studio</span>
+      <span class="pill">Git</span>
     </p>
   </section>
 
@@ -74,6 +100,20 @@ import { featured, projects } from "../data/projects";
     <h2>Get in touch</h2>
   <p class="section-lead">Open to consulting on performance investigations, engine / runtime architecture, or targeted debugging deep-dives.</p>
   <p><a class="btn primary" href="mailto:alexmollard@protonmail.com">alexmollard@protonmail.com</a></p>
-  <p style="font-size:.8rem; color:var(--text-dim); margin-top:.5rem;">Prefer concise context + reproduction notes; I’ll reply with initial angles / measurement strategy.</p>
   </section>
 </Layout>
+<style>
+/* About section layout improvements */
+.about { margin-top: .5rem; }
+.about .about-grid { display: grid; gap: 1rem 2rem; align-items: start; }
+.about .section-lead { margin: 0; }
+.about .about-body { line-height: 1.65; }
+.about .about-body p { margin: 0 0 .9rem; }
+.about ul { margin: 0 0 .9rem 1.1rem; }
+.about ul.compact { margin: .25rem 0 1rem 1.1rem; }
+.about li { margin: .25rem 0; }
+
+@media (min-width: 880px) {
+  .about .about-grid { grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); }
+}
+</style>

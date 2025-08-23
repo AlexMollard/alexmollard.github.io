@@ -10,6 +10,33 @@ export interface ProjectInfo {
 }
 
 export const projects: ProjectInfo[] = [
+  // Professional Game Development (Big Ant Studios)
+  {
+    name: 'TIEBREAK',
+    blurb: 'Official tennis game of the ATP and WTA. Featuring major tournaments, multiplayer, and customizable play styles.',
+    stack: ['C++', 'Game Development', 'Tennis Simulation'],
+    link: 'https://store.steampowered.com/app/2264340/TIEBREAK_Official_game_of_the_ATP_and_WTA/',
+    language: 'C++',
+    featured: true,
+  },
+  {
+    name: 'Cricket 24',
+    blurb: 'Culmination of a decade of Cricket video game development, featuring teams from around the globe.',
+    stack: ['C++', 'Game Development', 'Sports Simulation'],
+    link: 'https://store.steampowered.com/app/2358260/Cricket_24/',
+    language: 'C++',
+    featured: true,
+  },
+  {
+    name: 'AFL 23',
+    blurb: 'The most realistic AFL game ever - Feel the atmosphere, chase your dreams, and make it your own.',
+    stack: ['C++', 'Game Development', 'Sports Simulation'],
+    link: 'https://store.steampowered.com/app/2337630/AFL_23/',
+    language: 'C++',
+    featured: true,
+  },
+  
+  // Game Engines & Graphics
   {
     name: 'SlimeProject',
     blurb: 'SlimeEngine playground exploring modern Vulkan 1.3 features; a clean, extensible graphics framework for learning & experimentation.',
@@ -24,8 +51,15 @@ export const projects: ProjectInfo[] = [
     stack: ['C++', 'OpenGL', 'Vulkan', 'PBR'],
     repo: 'https://github.com/AlexMollard/Odyssean-Engine',
     language: 'C++',
-    featured: true,
   },
+  {
+    name: 'PBR Renderer',
+    blurb: 'OpenGL physically based rendering pipeline using up to 6 different textures per model for realistic lighting.',
+    stack: ['OpenGL', 'PBR', 'Graphics', 'Lighting'],
+    language: 'C++',
+  },
+  
+  // Audio & Media
   {
     name: 'Fly',
     blurb: 'Modern audio player with real-time visualization, spatial controls, and advanced processing (OpenAL + ImGui UI).',
@@ -34,20 +68,18 @@ export const projects: ProjectInfo[] = [
     language: 'C++',
     featured: true,
   },
-  {
-    name: 'CppOdyssey',
-    blurb: 'Educational C++ resource hub: guides, tutorials, and advanced systems topics (Vulkan, engine patterns, tooling).',
-    stack: ['C++', 'Content', 'Vulkan'],
-    repo: 'https://github.com/AlexMollard/CppOdyssey',
-    language: 'HTML',
-  },
+  
+  // Networking & Systems
   {
     name: 'EnetPlayGround',
     blurb: 'Networking sandbox using ENet for reliable UDP; client-server model, ImGui visualization, MySQL integration.',
     stack: ['C', 'ENet', 'Networking', 'ImGui', 'MySQL'],
     repo: 'https://github.com/AlexMollard/EnetPlayGround',
     language: 'C',
+    featured: true,
   },
+  
+  // Graphics & Rendering Tools
   {
     name: 'RenderAlchemy',
     blurb: 'OpenGL HDR + color grading lab: CLUT based workflows, tone mapping experiments, and UI-driven grading pipeline.',
@@ -55,31 +87,74 @@ export const projects: ProjectInfo[] = [
     repo: 'https://github.com/AlexMollard/RenderAlchemy',
     language: 'C',
   },
-  // Original placeholder / internal systems-oriented efforts (optional keep)
+  
+  // Game Projects
   {
-    name: 'ZeroMQ Market Data Fanout',
-    blurb: 'Ultra-low latency market data distribution layer using lock-free ring buffers and kernel bypass experiments.',
-    stack: ['C++20', 'ZeroMQ', 'Linux', 'Perf'],
-    repo: 'https://github.com/AlexMollard',
-    language: 'C++'
+    name: 'Frozen Depths',
+    blurb: 'Final project at AIE Melbourne featuring ice melting and creation using the cube marching algorithm.',
+    stack: ['C++', 'Procedural Generation', 'Cube Marching'],
+    language: 'C++',
   },
   {
-    name: 'Deterministic Job Scheduler',
-    blurb: 'High-throughput async job system w/ work-stealing, structured concurrency & deterministic simulation mode.',
-    stack: ['C++20', 'Atomics', 'Concurrency'],
-    language: 'C++'
+    name: '2D Unnamed Game',
+    blurb: '2D game built with OpenGL featuring collision detection, sprite rendering, text rendering, texture atlasing, and user input.',
+    stack: ['OpenGL', '2D Graphics', 'Game Development'],
+    language: 'C++',
   },
   {
-    name: 'Binary Format Toolkit',
-    blurb: 'Header-only serde + codegen for describing & fuzzing custom binary protocols and file formats.',
-    stack: ['C++17', 'Fuzzing', 'Clang'],
-    language: 'C++'
+    name: 'Temple of the Yokai',
+    blurb: 'First big group project. Responsible for all UI and serialization of settings, exploring Unity UI systems and controller input.',
+    stack: ['Unity', 'UI', 'Serialization', 'C#'],
+    repo: 'https://github.com/MoltenMoustache/YokaiTemple',
+    language: 'C#',
+  },
+  
+  // Procedural Generation & Simulation
+  {
+    name: 'Hex Game',
+    blurb: 'Procedural terrain generation using Perlin noise for height, rivers, humidity calculation, and realistic biome distribution.',
+    stack: ['Procedural Generation', 'Perlin Noise', 'Terrain'],
+    repo: 'https://github.com/AlexMollard/HexGridPractice',
+    language: 'C++',
   },
   {
-    name: 'Latency Lab',
-    blurb: 'Microbenchmark harness + visualizer for cross-platform latency characterization (timers, syscalls, queues).',
-    stack: ['C++20', 'Benchmark', 'Visualization'],
-    language: 'C++'
+    name: 'Fluid Simulator',
+    blurb: 'Physics simulation using cellular automata with falling sand mechanics, density cells, and flowing water.',
+    stack: ['Physics', 'Cellular Automata', 'Simulation'],
+    repo: 'https://github.com/AlexMollard/Fluid-Simulation',
+    language: 'C++',
+  },
+  {
+    name: 'Cellular Automata Noise Gen',
+    blurb: 'Noise generation using rock-paper-scissors cellular automata variation, programmed with AIE bootstrap engine.',
+    stack: ['Cellular Automata', 'Noise Generation', 'C++'],
+    repo: 'https://github.com/AlexMollard/Noise-Gen-Cellular-Automata',
+    language: 'C++',
+  },
+  {
+    name: 'Wire World',
+    blurb: 'Cellular automata implementation of Wire World ruleset, capable of creating complex machines and computers.',
+    stack: ['Cellular Automata', 'Logic Simulation'],
+    repo: 'https://github.com/AlexMollard/wireworld',
+    language: 'C++',
+  },
+  
+  // Educational & Documentation
+  {
+    name: 'CppOdyssey',
+    blurb: 'Educational C++ resource hub: guides, tutorials, and advanced systems topics (Vulkan, engine patterns, tooling).',
+    stack: ['C++', 'Documentation', 'Education', 'Vulkan'],
+    repo: 'https://github.com/AlexMollard/CppOdyssey',
+    language: 'HTML',
+  },
+  
+  // Business Ventures
+  {
+    name: 'Woven Minds Studios',
+    blurb: 'Game development studio in early stages, working on an ambitious game project with focus on innovation.',
+    stack: ['Game Development', 'Business', 'Studio Management'],
+    link: 'https://wovenminds.online/',
+    language: 'Various',
   }
 ];
 
